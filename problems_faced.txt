@@ -1,0 +1,25 @@
+PROBLEMS I FACED WHILE DOING THIS PROJECT
+
+1. IMPORTING DATASET 
+		My csv file contains 8807 records but only 100 records were being imported into the workbench.
+		Reasons:
+			1. my workbench has a limit to importing data or maybe skip rows checkbox is checked
+					I could not find the skip row or any other factor stating the row limit in import wizard option.
+							solution to this was to explicitly load data with the help of code lines.
+									PROBLEM: my workbench has access restrictions so data can't be loaded from local file
+										SOLUTION: 1.change the settings from both client and server side.
+														client side done, server side could not understand how to do it.
+												  2.globally define local=1 for that particular project
+														successfully done this but again problem occurs that mysql does not have permission to read the file.
+														isk aage kya krna hai smjh nh aa rha. tired now 
+			2. my dataset is not clean and contain blank spaces, unusual quotes or delimiters, or contains corrupted characters.
+			        not checked
+			3. excel might save data in ansi format rather than utf-8 which is used by sql.
+					converted to utf-8
+2. FIRST QUESTION
+		I was receiving a syntax error
+			Reason:
+				I wrote count (*).
+					SOLUTION: the correct syntax is count(*). there is no space between count and *.
+						reason being if we add space then count is simply being used as a keyword and not a function call.
+		
